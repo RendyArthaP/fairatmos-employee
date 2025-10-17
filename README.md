@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# 🧑‍💼 Employee Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project ini adalah aplikasi dashboard sederhana untuk mengelola data karyawan (employee management system).  
+Dibangun menggunakan **React + TypeScript + Vite**, dengan integrasi **React Query** untuk data fetching, serta mendukung **fake pagination client-side**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## React Compiler
+| Teknologi                        | Deskripsi                                                                  |
+| -------------------------------- | -------------------------------------------------------------------------- |
+| **React + TypeScript**           | Frontend utama berbasis komponen                                           |
+| **Vite**                         | Build tool yang cepat untuk React                                          |
+| **React Query (TanStack Query)** | Data fetching & caching dari API                                           |
+| **TailwindCSS**                  | Utility-first CSS framework                                                |
+| **Axios**                        | HTTP client untuk koneksi ke API backend                                   |
+| **ESLint + Prettier**            | Code linting & formatting                                                  |
+| **Custom Hooks**                 | `useEmployeesWithPagination`, `useCreateDataEmployee`, `useFakePagination` |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Fitur Utama
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ Menampilkan list data karyawan
+- 🔍 Client-side pagination (maks. 5 item per halaman)
+- ➕ Tambah data karyawan lewat modal
+- 🧠 Validasi form & error handling dari API
+- 🔄 React Query integration untuk refetch otomatis
+- 💬 Custom error handling & reset error state
+- 💅 Desain UI konsisten dengan Tailwind
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## How To Clone
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+git clone https://github.com/username/fairatmos-employee.git
+cd fairatmos-employee
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## How To Install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# atau
+
+yarn install
+
+# atau
+
+pnpm install
+
+## How To Run Dev
+
+npm run dev
+
+# atau
+
+yarn dev
+
+# atau
+
+pnpm dev
