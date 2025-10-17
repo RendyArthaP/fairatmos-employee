@@ -33,29 +33,13 @@ Dibangun menggunakan **React + TypeScript + Vite**, dengan integrasi **React Que
 
 ## How To Clone
 
-git clone https://github.com/username/fairatmos-employee.git
-cd fairatmos-employee
+- git clone https://github.com/username/fairatmos-employee.git
+- cd fairatmos-employee
 
 ## How To Install
 
-npm install
-
-# atau
-
-yarn install
-
-# atau
-
-pnpm install
+- yarn install
 
 ## How To Run Dev
 
-npm run dev
-
-# atau
-
-yarn dev
-
-# atau
-
-pnpm dev
+- yarn dev
