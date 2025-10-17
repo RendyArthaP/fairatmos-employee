@@ -10,7 +10,6 @@ import {
   useEmployeesWithPagination,
 } from "../../../services/resolver";
 import type { Employee } from "../../../services/type";
-import { useQueryClient } from "@tanstack/react-query";
 
 interface PropsModalAddEmployee {
   open: boolean;
@@ -141,8 +140,8 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
           value={addEmployee.name}
           onChange={handleChange}
           type="text"
-          isError={error?.response?.data?.message?.name}
-          errorMessage={error?.response?.data?.message?.name?.[0]}
+          isError={(error as any)?.response?.data?.message?.name}
+          errorMessage={(error as any)?.response?.data?.message?.name?.[0]}
         />
 
         {/** Gender */}
@@ -159,7 +158,7 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
                 checked={addEmployee.gender === "Male"}
                 onChange={handleChange}
                 className={
-                  error?.response?.data?.message?.gender
+                  (error as any)?.response?.data?.message?.gender
                     ? "ring-red-500 ring-1"
                     : "ring-red-50"
                 }
@@ -176,7 +175,7 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
                 checked={addEmployee.gender === "Female"}
                 onChange={handleChange}
                 className={
-                  error?.response?.data?.message?.gender
+                  (error as any)?.response?.data?.message?.gender
                     ? "ring-red-500 ring-1"
                     : "ring-red-50"
                 }
@@ -186,9 +185,9 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
               </span>
             </label>
           </div>
-          {error?.response?.data?.message?.gender && (
+          {(error as any)?.response?.data?.message?.gender && (
             <span className="text-xs text-red-500 mt-1">
-              {error?.response?.data?.message?.gender?.[0]}
+              {(error as any)?.response?.data?.message?.gender?.[0]}
             </span>
           )}
         </fieldset>
@@ -201,8 +200,8 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
           value={addEmployee.age}
           onChange={handleChange}
           type="number"
-          isError={error?.response?.data?.message?.age}
-          errorMessage={error?.response?.data?.message?.age?.[0]}
+          isError={(error as any)?.response?.data?.message?.age}
+          errorMessage={(error as any)?.response?.data?.message?.age?.[0]}
         />
 
         {/** Hobby */}
@@ -212,7 +211,7 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
           </label>
           <div
             className={
-              error?.response?.data?.message?.hobby
+              (error as any)?.response?.data?.message?.hobby
                 ? "border-red-500 rounded-md border p-2.5"
                 : "border-gray-300 rounded-md border p-2.5"
             }
@@ -238,9 +237,9 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
               className="h-10 w-full bg-transparent px-2 text-foreground placeholder:text-foreground/50 focus:outline-none"
             />
           </div>
-          {error?.response?.data?.message?.hobby && (
+          {(error as any)?.response?.data?.message?.hobby && (
             <span className="text-xs text-red-500 mt-1">
-              {error?.response?.data?.message?.hobby?.[0]}
+              {(error as any)?.response?.data?.message?.hobby?.[0]}
             </span>
           )}
         </div>
@@ -255,7 +254,7 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
             value={addEmployee.department}
             onChange={handleChange}
             className={
-              error?.response?.data?.message?.department
+              (error as any)?.response?.data?.message?.department
                 ? "border-red-500 rounded-md border p-2.5 text-sm md:text-base font-semibold text-gray-600 text-balance focus:outline-none"
                 : "border-gray-300 rounded-md border p-2.5 text-sm md:text-base font-semibold text-gray-600 text-balance focus:outline-none"
             }
@@ -276,9 +275,9 @@ const ModalAddEmployee: FC<PropsWithChildren<PropsModalAddEmployee>> = ({
               </option>
             ))}
           </select>
-          {error?.response?.data?.message?.department && (
+          {(error as any)?.response?.data?.message?.department && (
             <span className="text-xs text-red-500 mt-1">
-              {error?.response?.data?.message?.department?.[0]}
+              {(error as any)?.response?.data?.message?.department?.[0]}
             </span>
           )}
         </div>
